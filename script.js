@@ -1,31 +1,42 @@
-// objects in javascript
+// another way to create a objct using constructor
 
-// this is how  we create objects in javascripts
-
-const student1 = {
-    firstName: "Satya",
-    lastName: "Sumanth",
-    enrollment: 1,
-    branch: "CSE",
-    sayHello: () => {console.log(`hey my name is ${student1.firstName} ${student1.lastName}`)},
+function Car(make, model, year, color) {
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
 }
 
-const student2 = {
-    firstName: "Robert",
-    lastName: "Patinson",
-    enrollment: 2,
-    branch: "AI & ML",
-    sayHello: () => {console.log(`hey my name is ${student2.firstName} ${student2.lastName}`)},
+function Student(fullname, enrollmentNo, branch, cgpa) {
+    this.fullname = fullname;
+    this.enrollmentNo = enrollmentNo;
+    this.branch = branch;
+    this.cgpa = cgpa;
 }
 
-// console.log(student1.firstName);
-// console.log(student1.lastName);
-// console.log(student1.enrollment);
-// console.log(student1.branch);
-student1.sayHello();
-student2.sayHello();
+const car1 = new Car("Ford", "mustang", 2000, "Red");
+const car2 = new Car("Audi", "A4", 2016, "Black");
 
-// console.log(student2.lastName);
-// console.log(student2.enrollment);
-// console.log(student2.branch);
-// console.log(student2.firstName);
+const student1 = new Student("Robert Patinson", `${"CS00"}`+ 1, "CSE", 9.0);
+const student2 = new Student("Bruce wayne", `${"CS00"}`+ 2, "ECE", 9.9);
+
+console.log(student1.fullname);
+console.log(student1.enrollmentNo);
+console.log(student1.branch);
+console.log(student1.cgpa);
+
+console.log(student2.fullname);
+console.log(student2.enrollmentNo);
+console.log(student2.branch);
+console.log(student2.cgpa);
+
+// console.log(car1.make);
+// console.log(car1.model);
+// console.log(car1.year);
+// console.log(car1.color);
+
+// console.log(car2.make);
+// console.log(car2.model);
+// console.log(car2.year);
+// console.log(car2.color);
+
