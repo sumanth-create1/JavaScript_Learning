@@ -4,61 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>CGPA-CALCULATOR</title>
+    <title>CGPA CALCULATOR</title>
   </head>
   <body>
     <div class="container">
-      <!-- Header -->
-      <div class="header">
+      <header>
         <h1>CGPA CALCULATOR</h1>
-        <p>Calculate your semester result easily</p>
-      </div>
+        <p>Calculate your result</p>
+      </header>
 
-      <div class="calculate-card">
-        <!-- tableHeader -->
+      <main>
+        <section class="calculator-area">
+          <!-- Input section -->
 
-        <div class="table-header">
-          <span>Subject</span>
-          <span>Credits</span>
-          <span>Grade</span>
-          <span>Action</span>
-        </div>
+          <div class="input-section">
+            <h2>Add Subject</h2>
 
-        <!-- Subject Row -->
+            <!-- Subject -->
 
-        <div class="subject-row">
-          <input type="text" placeholder="subject-name" />
-          <input type="number" placeholder="credits" min="1" />
+            <div class="input-group">
+              <label for="subject"> Subject </label>
 
-          <select>
-            <option value="">Grade</option>
-            <option value="10">O</option>
-            <option value="9">A+</option>
-            <option value="8">A</option>
-            <option value="7">B+</option>
-            <option value="6">B</option>
-            <option value="5">C</option>
-            <option value="4">P</option>
-            <option value="0">F</option>
-          </select>
+              <input type="text" id="subject" placeholder="Enter Subject" />
+            </div>
 
-          <button class="delete-btn"></button>
-        </div>
+            <div class="input-group">
+              <label for="credit"> Credits </label>
 
-        <button class="add-btn">+ Add subject</button>
+              <input
+                type="number"
+                id="credits"
+                placeholder="Enter credit"
+                min="1"
+              />
+            </div>
 
-        <button class="calculate-btn">Calculate CGPA</button>
-      </div>
+            <div class="input-group">
+              <label for="grade"> Grade </label>
 
-      <!-- Result card -->
+              <select id="grade">
+                <option value="">Select Grade</option>
+                <option value="10">O</option>
+                <option value="9">A+</option>
+                <option value="8">A</option>
+                <option value="7">B+</option>
+                <option value="6">B</option>
+                <option value="5">C</option>
+                <option value="4">P</option>
+                <option value="0">F</option>
+              </select>
+            </div>
 
-      <div class="result-card">
-        <p>Your CGPA</p>
-        <h2>0.00</h2>
-        <span>Enter your subjects and celebrate</span>
-      </div>
+            <!-- Add Subject Button -->
+
+            <button type="button" id="addSubject">Add Subject</button>
+          </div>
+
+          <!-- Table Section -->
+
+          <div class="table-section">
+            <h2>Subjects</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Credit</th>
+                  <th>Grade</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody id="subjectTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="calculate-section">
+          <button type="button" id="calculateCGPA">Calculate CGPA</button>
+        </section>
+
+        <!-- Result Section -->
+
+        <section class="result-section">
+          <h2>Result</h2>
+
+          <div class="result-value">
+            <span id="cgpaResult"> 0.00 </span>
+          </div>
+        </section>
+      </main>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
