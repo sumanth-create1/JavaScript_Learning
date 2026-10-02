@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CGPA-CALCULATOR</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>CGPA CALCULATOR</h1>
+        <p>Calculate your semester result easily</p>
+      </div>
+
+      <!-- tableHeader -->
+
+      <div class="table-header">
+        <span>Subject</span>
+        <span>Credits</span>
+        <span>Grade</span>
+        <span>Action</span>
+      </div>
+
+      <!-- Subject Row -->
+
+      <div class="subject-row">
+        <input type="text" placeholder="subject-name" />
+        <input type="number" placeholder="credits" min="1" />
+
+        <select>
+          <option value="">Grade</option>
+          <option value="10">O</option>
+          <option value="9">A+</option>
+          <option value="8">A</option>
+          <option value="7">B+</option>
+          <option value="6">B</option>
+          <option value="5">C</option>
+          <option value="4">P</option>
+          <option value="0">F</option>
+        </select>
+
+        <button class="delete-btn"></button>
+
+        <button class="calculate-btn">Calculate CGPA</button>
+      </div>
+
+      <!-- Result card -->
+
+      <div class="result-card">
+        <p>Your CGPA</p>
+        <h2>0.00</h2>
+        <span>Enter your subjects and celebrate</span>
+      </div>
+    </div>
+  </body>
+</html>
