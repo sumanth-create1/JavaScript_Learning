@@ -1,27 +1,43 @@
-class User{
-    static userCount = 0;
+// inheritance in java script
 
-    constructor(username) {
-        this.username = username;
+class Animal{
+    alive = true;
 
-        User.userCount++;
+    eat(){
+        console.log(`This ${this.name} is eating.`);
     }
 
-    static getUserCount() {
-        console.log(`there are ${User.userCount} are in online`);
-    }
-
-    sayHello() {
-        console.log(`heyy my user name is ${this.username}`);
+    sleep(){
+        console.log(`this ${this.name} is sleeping.`);
     }
 }
 
-const user1 = new User("Bruce wayne");
-const user2 = new User("Robert Pattinson");
-const user3 = new User("Tony stark");
+class Rabbit extends Animal{
+    name = "Rabbit";
+}
+
+class Fish extends Animal{
+    name ="Fish";
+}
+
+class Eagle extends Animal{
+    name = "Eagle";
+}
+
+const rabbit = new Rabbit();
+const fish = new Fish();
+const eagle = new Eagle();
 
 
+console.log(rabbit.alive);
+rabbit.eat();
+rabbit.sleep();
 
-user1.sayHello();
-user2.sayHello();
-User.getUserCount();
+console.log(fish.alive);
+fish.eat();
+fish.sleep();
+
+console.log(eagle.alive);
+eagle.eat();
+eagle.sleep();
+
