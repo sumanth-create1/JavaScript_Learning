@@ -1,71 +1,26 @@
-// inheritance in java script
-
 class Animal{
-    static alive = true;
-
-     static eat(){
-        console.log(`This ${this.name} is eating.`);
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 
-    static sleep(){
-        console.log(`this ${this.name} is sleeping.`);
+    move() {
+        console.log(`this ${this.name} is moving at a speed of ${speed}`);
     }
 }
 
 class Rabbit extends Animal{
-    name = "Rabbit";
+    constructor(name , age, runSpeed) {
+        super(name, age);
+        this.runSpeed = runSpeed;
+    }
 
-    static run() {
-        console.log(`this ${this.name} is running.`);
+    run() {
+        console.log(`this ${this.name} is moving at a speed of ${this.runSpeed} km/hr`);
     }
 }
 
-class Fish extends Animal{
-    name ="Fish";
+const rabbit = new Rabbit("rabbit", 1 , 10);
 
-    static swim() {
-        console.log(`this ${this.name} is swimming.`);
-    }
-}
-
-class Eagle extends Animal{
-    name = "Eagle";
-
-    static fly() {
-        console.log(`this ${this.name} is flying.`);
-    }
-}
-
-const rabbit = new Rabbit();
-const fish = new Fish();
-const eagle = new Eagle();
-
-
-// using static key word in inheritance
-
-console.log(Rabbit.alive);
-Rabbit.eat();
-Rabbit.sleep();
-Rabbit.run();
-
-// after this all three animals are alive....
-
-// using static methods
-
-
-console.log(Fish.alive);
-Fish.eat();
-Fish.sleep();
-Fish.swim();
-
-console.log(Eagle.alive);
-Eagle.eat();
-Eagle.sleep();
-Eagle.fly();
-
-
-
-
-
-
-
+rabbit.run();
+console.log(`${rabbit.name} age is ${rabbit.age}`)
