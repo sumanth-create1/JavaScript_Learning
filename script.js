@@ -1,26 +1,43 @@
-class Animal{
-    constructor(name, age) {
+// const person = {
+//     name: "Sponge Bob square Pants",
+//     age: 30,
+//     isStudent: true,
+//     hobbies: ["jellyfishing", "karate", "cooking"],
+//     address: {
+//         street: "121 conch street",
+//         city: "London",
+//         country: "Intl water"
+//     }
+// }
+
+// console.log(person.name);
+// console.log(person.age);
+// console.log(person.isStudent);
+// console.log(person.hobbies);
+// console.log(person.address);
+
+
+class Person{
+    constructor(name, age, ...address)
+    {
         this.name = name;
         this.age = age;
-    }
-
-    move() {
-        console.log(`this ${this.name} is moving at a speed of ${speed}`);
+        this.address = new Address(...address);
     }
 }
 
-class Rabbit extends Animal{
-    constructor(name , age, runSpeed) {
-        super(name, age);
-        this.runSpeed = runSpeed;
-    }
-
-    run() {
-        console.log(`this ${this.name} is moving at a speed of ${this.runSpeed} km/hr`);
+class Address{
+    constructor(street, city, country)
+    {
+        this.street = street;
+        this.city = city;
+        this.country = country;
     }
 }
 
-const rabbit = new Rabbit("rabbit", 1 , 10);
-
-rabbit.run();
-console.log(`${rabbit.name} age is ${rabbit.age}`)
+const person1 = new Person("SpongeBob squarePants", 30, "121 conch street", 
+                                                        "Bikini Bottom",
+                                                        "Intl Water");
+console.log(person1.name);
+console.log(person1.age);
+console.log(person1.address);
